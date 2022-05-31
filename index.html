@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Zadanie_domowe_4_kantor</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="css/content.css">
+   <link rel="stylesheet" href="css/baseStyles.css">
+   <link rel="stylesheet" href="css/navigation.css">
+   <link rel="stylesheet" href="css/converter.css">
+   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+   <script defer src="js/scripts.js"></script>
+
+</head>
+
+<body class="body">
+   <section id="header">
+      <header id="Strona-główna" class="header">
+         <h1 class="header__text">Przelicznik walut</h1>
+      </header>
+   </section>
+   <section id="navigation">
+      <nav class="navigation">
+         <a href="#Strona-główna" title="Wróć do strony głównej" class="navigation__link">Strona główna</a>
+         <a href="#converter" title="Przejdź do przelicznika" class="navigation__link">Przelicz walutę</a>
+         <a href="mailto:serisoch@gmail.com" title="Napisz e-mail" class="navigation__link">Kontakt</a>
+      </nav>
+   </section>
+   <section id="converter" class="converter">
+      <form class="converter__form js-form">
+         <fieldset class="converter__formFieldset">
+            <legend>Wybierz walutę do przeliczenia</legend>
+            <label>
+               <span class="converter__formVariables">Wybierz jedną:</span>
+               <select name="currency" class="converter__formData  js-select">
+                  <option value="EUR">Euro</option>
+                  <option value="USD">Dolar amerykański</option>
+               </select>
+            </label>
+         </fieldset>
+         <fieldset class="converter__formFieldset">
+            <legend>Wybierz co chcesz zrobić</legend>
+            <label>
+               <span class="converter__formVariables">Wybierz jedną opcję:</span>
+               <p class="converter__formTrades">
+                  <input class="converter__formTradeType js-tradeTypeSell" type="radio" name="tradeType" checked>
+                  Sprzedaję
+                  <input class="converter__formTradeType js-tradeTypeBuy" type="radio" name="tradeType"> Kupuję
+               </p>
+            </label>
+         </fieldset>
+         <fieldset class="converter__formFieldset">
+            <legend>Podaj kwotę do przeliczenia</legend>
+            <label>
+               <span class="converter__formVariables">Kwota:</span>
+               <input type="number" name="amount" class="converter__formData js-input" required min="1" max="10000">
+            </label>
+         </fieldset>
+         <button class="converter__formButton js-button">Przelicz</button>
+      </form>
+      <span class="converter__formReturned">Otrzymasz:
+         <strong class="js-returned"></strong>
+      </span>
+   </section>
+   <footer class="footer">© Copyright 2022 by Sciuszek - wszelkie prawa zastrzeżone</footer>
+</body>
+
+</html>

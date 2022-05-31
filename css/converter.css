@@ -1,0 +1,56 @@
+.converter {
+    border: 0px solid rgb(95, 0, 0);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgb(95, 0, 0) 0px 0px 30px 20px;
+}
+
+.converter__formFieldset {
+    border-radius: 5px;
+    border: 2px solid rgb(95, 0, 0);
+    margin: 10px 0;
+}
+
+.converter__formVariables {
+    width: 150px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.converter__formTrades {
+    display: inline-block;
+}
+
+.converter__formData {
+    border: 2px solid rgb(95, 0, 0);
+    border-radius: 10px;
+    padding: 3px;
+    width: 100%;
+    max-width: 180px;
+}
+
+.converter__formButton {
+    margin: auto;
+    margin-top: 5px;
+    display: block;
+    color: white;
+    background-color: rgb(95, 0, 0);
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+}
+
+.converter__formButton:hover {
+    background-color: rgba(95, 0, 0, 0.705);
+}
+
+.converter__formButton:active {
+    background-color: rgba(95, 0, 0, 0.466);
+}
+
+.converter__formReturned {
+    display: block;
+    margin: 10px;
+    font-size: 20px;
+}

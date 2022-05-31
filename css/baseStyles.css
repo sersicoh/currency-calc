@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: initial;
+}
+
+.body {
+    color: rgba(243, 243, 243, 0.849);
+    background-color: rgba(143, 79, 0, 0.836);
+    max-width: 1000px;
+    display: table;
+    margin: auto;
+    font-family: 'Fira', sans-serif;
+
+}
+
+.header {
+    padding: 5px 40px;
+    text-shadow: 1px 0px 16px rgb(20 16 16);
+}
+
+.header__text {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+}
