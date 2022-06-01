@@ -2,7 +2,8 @@
     border: 0px solid rgb(95, 0, 0);
     padding: 10px;
     border-radius: 20px;
-    box-shadow: rgb(95, 0, 0) 0px 0px 30px 20px;
+    box-shadow: inset rgb(96 0 0) 0px 0px 15px 10px, rgb(116 0 0) 0px 0px 40px 20px;
+    background-color: rgb(218, 160, 1);
 }
 
 .converter__formFieldset {
