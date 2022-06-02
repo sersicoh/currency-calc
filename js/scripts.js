@@ -1,43 +1,42 @@
-let form, select, input, returned, EUR, USD;
+{
+    const form = document.querySelector(".js-form");
+    const select = document.querySelector(".js-select");
+    const tradeTypeSell = document.querySelector(".js-tradeTypeSell");
+    const input = document.querySelector(".js-input");
+    const EUR = 4.77;
+    const USD = 4.2;
+    let returned = document.querySelector(".js-returned");
 
-form = document.querySelector(".js-form");
-select = document.querySelector(".js-select");
-tradeTypeSell = document.querySelector(".js-tradeTypeSell");
-input = document.querySelector(".js-input");
-returned = document.querySelector(".js-returned");
-EUR = 4.77;
-USD = 4.2;
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+        let returnedValue;
 
-    let selectValue, inputValue, returnedValue;
+        const selectValue = select.value;
+        const inputValue = input.value;
 
-    selectValue = select.value;
-    inputValue = input.value;
+        if (tradeTypeSell.checked === true) {
+            switch (selectValue) {
+                case "EUR":
+                    returnedValue = inputValue * EUR;
+                    break;
+                case "USD":
+                    returnedValue = inputValue * USD;
+                    break;
+            }
+            returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " zł";
 
-    if (tradeTypeSell.checked === true) {
-        switch (selectValue) {
-            case "EUR":
-                returnedValue = inputValue * EUR;
-                break;
-            case "USD":
-                returnedValue = inputValue * USD;
-                break;
+        } else {
+            switch (selectValue) {
+                case "EUR":
+                    returnedValue = inputValue / EUR;
+                    returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " €";
+                    break;
+                case "USD":
+                    returnedValue = inputValue / USD;
+                    returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " $";
+                    break;
+            }
         }
-        returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " zł";
-
-    } else {
-        switch (selectValue) {
-            case "EUR":
-                returnedValue = inputValue / EUR;
-                returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " €";
-                break;
-            case "USD":
-                returnedValue = inputValue / USD;
-                returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " $";
-                break;
-        }
-    }
-})
-
+    })
+}
