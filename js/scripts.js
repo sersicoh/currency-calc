@@ -1,14 +1,12 @@
 {
     const message = () => {
-        console.log("asdf");
+        console.log("Siema, ciężko mi określić czy zrobiłem refactor dobrze. To gdzie i czy powinno zostać");
     }
-
     const calculateResult = (tradeTypeSell, selectValue, inputValue) => {
 
         let returnedTable = [];
         const EUR = 4.77;
         const USD = 4.2;
-
         if (tradeTypeSell.checked === true) {
             switch (selectValue) {
                 case "EUR":
@@ -34,21 +32,21 @@
             }
         }
     }
+    const update = (result) =>{
+        const returned = document.querySelector(".js-returned");
+        returned.innerText = result[0].toFixed(2).replace("\.", ",") + result[1];
+    }
     const onFormSubmit = (event) => {
         event.preventDefault();
-
         const select = document.querySelector(".js-select");
         const tradeTypeSell = document.querySelector(".js-tradeTypeSell");
         const input = document.querySelector(".js-input");
-
-        let returned = document.querySelector(".js-returned");
-
         const result = calculateResult(tradeTypeSell, select.value, input.value);
-        returned.innerText = result[0].toFixed(2).replace("\.", ",") + result[1];
 
+        update(result);
     }
     const init = () => {
-
+        
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
     }
