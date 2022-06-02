@@ -1,42 +1,57 @@
 {
-    const form = document.querySelector(".js-form");
-    const select = document.querySelector(".js-select");
-    const tradeTypeSell = document.querySelector(".js-tradeTypeSell");
-    const input = document.querySelector(".js-input");
-    const EUR = 4.77;
-    const USD = 4.2;
-    let returned = document.querySelector(".js-returned");
+    const message = () => {
+        console.log("asdf");
+    }
 
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
+    const calculateResult = (tradeTypeSell, selectValue, inputValue) => {
 
-        let returnedValue;
-
-        const selectValue = select.value;
-        const inputValue = input.value;
+        let returnedTable = [];
+        const EUR = 4.77;
+        const USD = 4.2;
 
         if (tradeTypeSell.checked === true) {
             switch (selectValue) {
                 case "EUR":
-                    returnedValue = inputValue * EUR;
-                    break;
+                    returnedTable.push(inputValue * EUR);
+                    returnedTable.push(" zł");
+                    return returnedTable;
                 case "USD":
-                    returnedValue = inputValue * USD;
-                    break;
+                    returnedTable.push(inputValue * USD);
+                    returnedTable.push(" zł");
+                    return returnedTable;
             }
-            returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " zł";
-
         } else {
             switch (selectValue) {
                 case "EUR":
-                    returnedValue = inputValue / EUR;
-                    returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " €";
-                    break;
+                    returnedTable.push(inputValue / EUR);
+                    returnedTable.push(" €");
+                    return returnedTable;
+
                 case "USD":
-                    returnedValue = inputValue / USD;
-                    returned.innerText = returnedValue.toFixed(2).replace("\.", ",") + " $";
-                    break;
+                    returnedTable.push(inputValue / USD);
+                    returnedTable.push(" $");
+                    return returnedTable;
             }
         }
-    })
+    }
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const select = document.querySelector(".js-select");
+        const tradeTypeSell = document.querySelector(".js-tradeTypeSell");
+        const input = document.querySelector(".js-input");
+
+        let returned = document.querySelector(".js-returned");
+
+        const result = calculateResult(tradeTypeSell, select.value, input.value);
+        returned.innerText = result[0].toFixed(2).replace("\.", ",") + result[1];
+
+    }
+    const init = () => {
+
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", onFormSubmit);
+    }
+    message();
+    init();
 }
