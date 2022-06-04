@@ -1,40 +1,43 @@
 {
     const message = () => {
-        console.log("Siema, ciężko mi określić czy zrobiłem refactor dobrze. To gdzie i czy powinno zostać");
+        console.log("Siema, ciężko mi określić czy zrobiłem refactor dobrze. Sugerując się poprzednią oceną zadania z tygodnia 4. poprawiłem też podobny kod w switchu, tzn. wyciągnąłem zwracaną wartość 'returned' poza switcha");
     }
     const calculateResult = (tradeTypeSell, selectValue, inputValue) => {
 
-        let returnedTable = [];
+        let currencyCode;
+        let returned;
         const EUR = 4.77;
         const USD = 4.2;
+
         if (tradeTypeSell.checked === true) {
             switch (selectValue) {
                 case "EUR":
-                    returnedTable.push(inputValue * EUR);
-                    returnedTable.push(" zł");
-                    return returnedTable;
+                    currencyCode = " €";
+                    returnedValue = inputValue * EUR;
+                    break;
                 case "USD":
-                    returnedTable.push(inputValue * USD);
-                    returnedTable.push(" zł");
-                    return returnedTable;
+                    currencyCode = " $";
+                    returnedValue = inputValue * USD;
+                    break;
             }
         } else {
             switch (selectValue) {
                 case "EUR":
-                    returnedTable.push(inputValue / EUR);
-                    returnedTable.push(" €");
-                    return returnedTable;
-
+                    currencyCode = " €";
+                    returnedValue = inputValue / EUR;
+                    break;
                 case "USD":
-                    returnedTable.push(inputValue / USD);
-                    returnedTable.push(" $");
-                    return returnedTable;
+                    currencyCode = " $";
+                    returnedValue = inputValue / USD;
+                    break;
             }
         }
+        returned = (returnedValue.toFixed(2) + currencyCode).replace("\.", ",");
+        return returned;
     }
-    const update = (result) =>{
+    const update = (result) => {
         const returned = document.querySelector(".js-returned");
-        returned.innerText = result[0].toFixed(2).replace("\.", ",") + result[1];
+        returned.innerText = result;
     }
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -46,7 +49,7 @@
         update(result);
     }
     const init = () => {
-        
+
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
     }
