@@ -33,38 +33,38 @@
       </nav>
    </section>
    <section id="converter" class="converter">
-      <form class="converter__form js-form">
-         <fieldset class="converter__formFieldset">
+      <form class="form js-form">
+         <fieldset class="form__Fieldset">
             <legend>Wybierz walutę do przeliczenia</legend>
             <label>
-               <span class="converter__formVariables">Wybierz jedną:</span>
-               <select name="currency" class="converter__formData  js-select">
+               <span class="form__Variables">Wybierz jedną:</span>
+               <select name="currency" class="form__Data  js-select">
                   <option value="EUR">Euro</option>
                   <option value="USD">Dolar amerykański</option>
                </select>
             </label>
          </fieldset>
-         <fieldset class="converter__formFieldset">
+         <fieldset class="form__Fieldset">
             <legend>Wybierz co chcesz zrobić</legend>
             <label>
-               <span class="converter__formVariables">Wybierz jedną opcję:</span>
-               <p class="converter__formTrades">
-                  <input class="converter__formTradeType js-tradeTypeSell" type="radio" name="tradeType" checked>
+               <span class="form__Variables">Wybierz jedną opcję:</span>
+               <p class="form__Trades">
+                  <input class="form__TradeType js-tradeTypeSell" type="radio" name="tradeType" checked>
                   Sprzedaję
-                  <input class="converter__formTradeType js-tradeTypeBuy" type="radio" name="tradeType"> Kupuję
+                  <input class="form__TradeType js-tradeTypeBuy" type="radio" name="tradeType"> Kupuję
                </p>
             </label>
          </fieldset>
-         <fieldset class="converter__formFieldset">
+         <fieldset class="form__Fieldset">
             <legend>Podaj kwotę do przeliczenia</legend>
             <label>
-               <span class="converter__formVariables">Kwota:</span>
-               <input type="number" name="amount" class="converter__formData js-input" required min="1" max="10000">
+               <span class="form__Variables">Kwota:</span>
+               <input type="number" name="amount" class="form__Data js-input" required min="1" max="10000">
             </label>
          </fieldset>
-         <button class="converter__formButton js-button">Przelicz</button>
+         <button class="form__Button js-button">Przelicz</button>
       </form>
-      <span class="converter__formReturned">Otrzymasz:
+      <span class="form__Returned">Otrzymasz:
          <strong class="js-returned"></strong>
       </span>
    </section>

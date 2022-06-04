@@ -6,23 +6,23 @@
     background-color: rgb(218, 160, 1);
 }
 
-.converter__formFieldset {
+.form__Fieldset {
     border-radius: 5px;
     border: 2px solid rgb(95, 0, 0);
     margin: 10px 0;
 }
 
-.converter__formVariables {
+.form__Variables {
     width: 150px;
     display: inline-block;
     margin-right: 5px;
 }
 
-.converter__formTrades {
+.form__Trades {
     display: inline-block;
 }
 
-.converter__formData {
+.form__Data {
     border: 2px solid rgb(95, 0, 0);
     border-radius: 10px;
     padding: 3px;
@@ -30,7 +30,7 @@
     max-width: 180px;
 }
 
-.converter__formButton {
+.form__Button {
     margin: auto;
     margin-top: 5px;
     display: block;
@@ -42,15 +42,15 @@
     border: none;
 }
 
-.converter__formButton:hover {
+.form__Button:hover {
     background-color: rgba(95, 0, 0, 0.705);
 }
 
-.converter__formButton:active {
+.form__Button:active {
     background-color: rgba(95, 0, 0, 0.466);
 }
 
-.converter__formReturned {
+.form__Returned {
     display: block;
     margin: 10px;
     font-size: 20px;
